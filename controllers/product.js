@@ -6,7 +6,7 @@ export const getProducts = async (req, res) => {
     res.send(product);
   } catch (error) {
     console.log(error);
-    res.send("No Results");
+    res.send(404, "No Results");
   }
 };
 
@@ -19,7 +19,7 @@ export const getProductById = async (req, res) => {
     });
     res.send(product[0]);
   } catch (error) {
-    res.send("This Product Not Found");
+    res.send(400, "This Product Not Found");
   }
 };
 
@@ -30,7 +30,7 @@ export const createProduct = async (req, res) => {
       message: "Product Created",
     });
   } catch (error) {
-    res.send("Failed create product");
+    res.send(400, "Failed create product");
   }
 };
 
@@ -43,7 +43,7 @@ export const updateProduct = async (req, res) => {
       message: "Product Updated",
     });
   } catch (error) {
-    res.send("Failed update product");
+    res.send(400, "Failed update product");
   }
 };
 
@@ -58,6 +58,6 @@ export const deleteProduct = async (req, res) => {
       message: "Product Deleted",
     });
   } catch (error) {
-    res.send("Failed delete product");
+    res.send(400, "Failed delete product");
   }
 };
