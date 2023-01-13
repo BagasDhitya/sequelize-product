@@ -10,6 +10,9 @@ const Product = db.define("products", {
   price: {
     type: DataTypes.DOUBLE,
   },
+  image: {
+    type: DataTypes.BLOB("medium"),
+  },
 });
 
 export default Product;
